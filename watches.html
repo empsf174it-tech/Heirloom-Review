@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fine Watches | Heirloom Review</title>
+  <meta name="description" content="Compare and review fine watches with verified owner reviews, expert scores, and detailed feature matrices.">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">Heirloom Review</a>
+      
+      <!-- Desktop Nav -->
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="watches.html" class="active">Watches</a></li>
+          <li class="dropdown">
+            <a href="jewelry.html" class="dropdown-toggle btn-secondary" aria-haspopup="true">Jewelry <i class="ph ph-caret-down"></i></a>
+            <ul class="dropdown-menu">
+              <li><a href="jewelry.html?type=rings">Rings</a></li>
+              <li><a href="jewelry.html?type=necklaces">Necklaces</a></li>
+              <li><a href="jewelry.html?type=bracelets">Bracelets</a></li>
+              <li><a href="jewelry.html?type=earrings">Earrings</a></li>
+            </ul>
+          </li>
+          <li><a href="services.html">Services</a></li>
+          <li class="dropdown">
+            <a href="about.html" class="dropdown-toggle btn-secondary" aria-haspopup="true">About <i class="ph ph-caret-down"></i></a>
+            <ul class="dropdown-menu">
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="about.html#methodology">How We Rate</a></li>
+              <li><a href="about.html#heritage">Heritage</a></li>
+              <li><a href="about.html#contact">Contact</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <a href="compare.html" class="btn btn-primary nav-cta">Compare</a>
+
+      <!-- Mobile Hamburger -->
+      <button class="hamburger" aria-label="Open Menu" aria-expanded="false" aria-controls="mobile-menu">
+        <i class="ph ph-list"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-menu-overlay"></div>
+  <div class="mobile-menu-drawer" id="mobile-menu">
+    <button class="close-menu" aria-label="Close Menu"><i class="ph ph-x"></i></button>
+    <nav aria-label="Mobile Navigation">
+      <ul class="mobile-nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="watches.html">Watches</a></li>
+        <li>
+          <button class="mobile-dropdown-toggle" aria-expanded="false" aria-controls="mobile-jewelry-menu">Jewelry <i class="ph ph-caret-down"></i></button>
+          <ul class="mobile-dropdown-menu" id="mobile-jewelry-menu">
+            <li><a href="jewelry.html?type=rings">Rings</a></li>
+            <li><a href="jewelry.html?type=necklaces">Necklaces</a></li>
+            <li><a href="jewelry.html?type=bracelets">Bracelets</a></li>
+            <li><a href="jewelry.html?type=earrings">Earrings</a></li>
+          </ul>
+        </li>
+        <li><a href="services.html">Services</a></li>
+        <li>
+          <button class="mobile-dropdown-toggle" aria-expanded="false" aria-controls="mobile-about-menu">About <i class="ph ph-caret-down"></i></button>
+          <ul class="mobile-dropdown-menu" id="mobile-about-menu">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="about.html#methodology">How We Rate</a></li>
+            <li><a href="about.html#heritage">Heritage</a></li>
+            <li><a href="about.html#contact">Contact</a></li>
+          </ul>
+        </li>
+        <li class="mobile-cta"><a href="compare.html" class="btn btn-primary">Compare</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <main style="padding-top: 80px;">
+    <section class="container" style="padding-top: var(--space-6); padding-bottom: var(--space-4);">
+      <div class="section-header" style="margin-bottom: var(--space-4);">
+        <h1>Fine Watches</h1>
+        <p>Explore our curated collection of mechanical masterpieces. Filter by movement, material, or price tier.</p>
+      </div>
+
+      <!-- Filters Bar -->
+      <div class="filters-bar">
+        <select id="filter-movement" class="filter-select" aria-label="Filter by Movement">
+          <option value="">All Movements</option>
+          <option value="Automatic">Automatic</option>
+          <option value="Manual">Manual</option>
+          <option value="Quartz">Quartz</option>
+        </select>
+        <select id="filter-material" class="filter-select" aria-label="Filter by Case Material">
+          <option value="">All Materials</option>
+          <option value="Stainless Steel">Stainless Steel</option>
+          <option value="18k Rose Gold">18k Rose Gold</option>
+          <option value="Titanium">Titanium</option>
+        </select>
+        <select id="filter-tier" class="filter-select" aria-label="Filter by Price Tier">
+          <option value="">All Price Tiers</option>
+          <!-- Injected from data.js -->
+        </select>
+        <select id="sort-by" class="filter-select" aria-label="Sort By">
+          <option value="featured">Sort: Featured</option>
+          <option value="price-asc">Price: Low to High</option>
+          <option value="price-desc">Price: High to Low</option>
+          <option value="rating">Highest Rating</option>
+        </select>
+        <div style="display: flex; gap: 8px; align-items: center;">
+          <input type="number" id="min-price" class="form-control" placeholder="Min $" style="width: 100px; padding: var(--space-2);" aria-label="Minimum Price">
+          <span>-</span>
+          <input type="number" id="max-price" class="form-control" placeholder="Max $" style="width: 100px; padding: var(--space-2);" aria-label="Maximum Price">
+          <button id="apply-price" class="btn btn-secondary" style="padding: var(--space-2) var(--space-3);">Apply</button>
+        </div>
+        <button id="reset-filters" class="btn btn-secondary" style="border:none; text-decoration:underline;">Reset</button>
+      </div>
+      <div id="active-chips" class="chips-container"></div>
+      
+      <div id="no-results" style="display: none; text-align: center; padding: var(--space-6);">
+        <h3>No watches found</h3>
+        <p>Try adjusting your filters or price range.</p>
+      </div>
+
+      <div class="product-grid" id="watches-grid">
+        <!-- Rendered via JS -->
+      </div>
+    </section>
+  </main>
+
+  <!-- Compare Tray -->
+  <div class="compare-tray" id="compare-tray">
+    <div style="flex-grow: 1;">
+      <h4 style="margin-bottom: 0;">Compare Watches (<span id="compare-count">0</span>/4)</h4>
+      <p style="font-size: 0.75rem; margin: 0; color: var(--color-text-light);" id="compare-message"></p>
+    </div>
+    <div class="compare-items" id="compare-items-list"></div>
+    <div style="display:flex; gap:8px;">
+      <button id="clear-compare" class="btn btn-secondary">Clear</button>
+      <a href="compare.html?tab=watches" class="btn btn-primary" id="go-compare">Compare</a>
+    </div>
+  </div>
+
+  <!-- Detail Modal -->
+  <div class="modal-overlay" id="detail-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Close modal"><i class="ph ph-x"></i></button>
+      <div id="modal-body">
+        <!-- Rendered via detail.js -->
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html" class="logo" style=" margin-bottom: var(--space-3);">Heirloom Review</a>
+          <p style="font-size: 0.875rem; color: #ccc;">Independent, comprehensive comparisons of fine watches and exquisite jewelry to guide your next heirloom investment.</p>
+          <div class="social-links"><a href="#" aria-label="Instagram"><i class="ph ph-instagram-logo"></i></a><a href="#" aria-label="Pinterest"><i class="ph ph-pinterest-logo"></i></a><a href="#" aria-label="YouTube"><i class="ph ph-youtube-logo"></i></a><a href="#" aria-label="Facebook"><i class="ph ph-facebook-logo"></i></a><a href="#" aria-label="X"><i class="ph ph-x-logo"></i></a></div>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="watches.html">Watches Hub</a></li>
+            <li><a href="jewelry.html">Jewelry Hub</a></li>
+            <li><a href="compare.html">Compare Matrix</a></li>
+            <li><a href="jewelry.html#diamond-guide">Diamond Guide</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="about.html#methodology">How We Rate</a></li>
+            <li><a href="about.html#heritage">Our Heritage</a></li>
+            <li><a href="about.html#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="services.html">Our Services</a></li>
+            <li><a href="services.html#faq">FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-disclosure">Disclaimer: Some links may be affiliate links. We may earn a commission at no cost to you. Reviews are independent. Heirloom Review is a demo brand. Prices, specs, and ratings are placeholder data and are not appraisals, valuations, or investment advice. Resale value is not guaranteed.</p>
+        <p style="font-size: 0.875rem; color: #666;">&copy; 2026 Heirloom Review. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/watches.js"></script>
+  <script src="assets/js/detail.js"></script>
+  <script src="assets/js/reviews.js"></script>
+</body>
+</html>

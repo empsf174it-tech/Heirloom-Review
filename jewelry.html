@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fine Jewelry | Heirloom Review</title>
+  <meta name="description" content="Compare and review fine jewelry. Read our comprehensive 4 C's Diamond Guide and explore verified owner reviews.">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">Heirloom Review</a>
+      <!-- Desktop Nav -->
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="watches.html">Watches</a></li>
+          <li class="dropdown">
+            <a href="jewelry.html" class="dropdown-toggle btn-secondary active" aria-haspopup="true">Jewelry <i class="ph ph-caret-down"></i></a>
+            <ul class="dropdown-menu">
+              <li><a href="jewelry.html?type=rings">Rings</a></li>
+              <li><a href="jewelry.html?type=necklaces">Necklaces</a></li>
+              <li><a href="jewelry.html?type=bracelets">Bracelets</a></li>
+              <li><a href="jewelry.html?type=earrings">Earrings</a></li>
+            </ul>
+          </li>
+          <li><a href="services.html">Services</a></li>
+          <li class="dropdown">
+            <a href="about.html" class="dropdown-toggle btn-secondary" aria-haspopup="true">About <i class="ph ph-caret-down"></i></a>
+            <ul class="dropdown-menu">
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="about.html#methodology">How We Rate</a></li>
+              <li><a href="about.html#heritage">Heritage</a></li>
+              <li><a href="about.html#contact">Contact</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <a href="compare.html" class="btn btn-primary nav-cta">Compare</a>
+      <!-- Mobile Hamburger -->
+      <button class="hamburger" aria-label="Open Menu" aria-expanded="false" aria-controls="mobile-menu">
+        <i class="ph ph-list"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-menu-overlay"></div>
+  <div class="mobile-menu-drawer" id="mobile-menu">
+    <button class="close-menu" aria-label="Close Menu"><i class="ph ph-x"></i></button>
+    <nav aria-label="Mobile Navigation">
+      <ul class="mobile-nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="watches.html">Watches</a></li>
+        <li>
+          <button class="mobile-dropdown-toggle" aria-expanded="false" aria-controls="mobile-jewelry-menu">Jewelry <i class="ph ph-caret-down"></i></button>
+          <ul class="mobile-dropdown-menu" id="mobile-jewelry-menu">
+            <li><a href="jewelry.html?type=rings">Rings</a></li>
+            <li><a href="jewelry.html?type=necklaces">Necklaces</a></li>
+            <li><a href="jewelry.html?type=bracelets">Bracelets</a></li>
+            <li><a href="jewelry.html?type=earrings">Earrings</a></li>
+          </ul>
+        </li>
+        <li><a href="services.html">Services</a></li>
+        <li>
+          <button class="mobile-dropdown-toggle" aria-expanded="false" aria-controls="mobile-about-menu">About <i class="ph ph-caret-down"></i></button>
+          <ul class="mobile-dropdown-menu" id="mobile-about-menu">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="about.html#methodology">How We Rate</a></li>
+            <li><a href="about.html#heritage">Heritage</a></li>
+            <li><a href="about.html#contact">Contact</a></li>
+          </ul>
+        </li>
+        <li class="mobile-cta"><a href="compare.html" class="btn btn-primary">Compare</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <main style="padding-top: 80px;">
+    <!-- Hub Section -->
+    <section class="container" style="padding-top: var(--space-6); padding-bottom: var(--space-4);">
+      <div class="section-header" style="margin-bottom: var(--space-4);">
+        <h1>Fine Jewelry</h1>
+        <p>Discover masterpieces of metal and stone. Filter by type, gemstone, and verify quality with our transparent scorecards.</p>
+      </div>
+
+      <!-- Filters Bar -->
+      <div class="filters-bar">
+        <select id="filter-type" class="filter-select" aria-label="Filter by Type">
+          <option value="">All Types</option>
+          <option value="rings">Rings</option>
+          <option value="necklaces">Necklaces</option>
+          <option value="bracelets">Bracelets</option>
+          <option value="earrings">Earrings</option>
+        </select>
+        <select id="filter-metal" class="filter-select" aria-label="Filter by Metal">
+          <option value="">All Metals</option>
+          <option value="Platinum">Platinum</option>
+          <option value="18k White Gold">18k White Gold</option>
+          <option value="18k Yellow Gold">18k Yellow Gold</option>
+        </select>
+        <select id="filter-tier" class="filter-select" aria-label="Filter by Price Tier">
+          <option value="">All Price Tiers</option>
+          <!-- Injected via JS -->
+        </select>
+        <select id="sort-by" class="filter-select" aria-label="Sort By">
+          <option value="featured">Sort: Featured</option>
+          <option value="price-asc">Price: Low to High</option>
+          <option value="price-desc">Price: High to Low</option>
+          <option value="rating">Highest Rating</option>
+        </select>
+        <div style="display: flex; gap: 8px; align-items: center;">
+          <input type="number" id="min-price" class="form-control" placeholder="Min $" style="width: 100px; padding: var(--space-2);" aria-label="Minimum Price">
+          <span>-</span>
+          <input type="number" id="max-price" class="form-control" placeholder="Max $" style="width: 100px; padding: var(--space-2);" aria-label="Maximum Price">
+          <button id="apply-price" class="btn btn-secondary" style="padding: var(--space-2) var(--space-3);">Apply</button>
+        </div>
+        <button id="reset-filters" class="btn btn-secondary" style="border:none; text-decoration:underline;">Reset</button>
+      </div>
+      <div id="active-chips" class="chips-container"></div>
+      
+      <div id="no-results" style="display: none; text-align: center; padding: var(--space-6);">
+        <h3>No jewelry found</h3>
+        <p>Try adjusting your filters or price range.</p>
+      </div>
+
+      <div class="product-grid" id="jewelry-grid">
+        <!-- Rendered via JS -->
+      </div>
+    </section>
+
+    <!-- Diamond Guide Section -->
+    <section id="diamond-guide" style="background-color: var(--color-bg-offset);">
+      <div class="container">
+        <div class="section-header">
+          <h2>The 4 C's Diamond Guide</h2>
+          <p>An interactive explainer for Cut, Color, Clarity, and Carat. Learn how to prioritize attributes based on your budget and preferences.</p>
+        </div>
+        
+        <div class="four-c-grid">
+          <!-- Cut -->
+          <div class="card" style="text-align: left; align-items: flex-start;">
+            <h3>Cut</h3>
+            <p>The most important factor for brilliance. A poor cut makes a diamond look dull regardless of its color or clarity.</p>
+            <select id="guide-cut" class="filter-select" style="width: 100%; margin-bottom: var(--space-2);" aria-label="Select Cut Grade">
+              <option value="excellent">Excellent / Ideal</option>
+              <option value="very-good">Very Good</option>
+              <option value="good">Good</option>
+              <option value="poor">Poor</option>
+            </select>
+            <div id="cut-desc" style="font-size: 0.875rem; color: var(--color-text-light);">Maximizes light return. Highly recommended.</div>
+          </div>
+          <!-- Color -->
+          <div class="card" style="text-align: left; align-items: flex-start;">
+            <h3>Color</h3>
+            <p>Ranges from D (colorless) to Z (light yellow). Near-colorless (G-J) offers great value while appearing white.</p>
+            <select id="guide-color" class="filter-select" style="width: 100%; margin-bottom: var(--space-2);" aria-label="Select Color Grade">
+              <option value="d-f">D-F (Colorless)</option>
+              <option value="g-j" selected>G-J (Near Colorless)</option>
+              <option value="k-m">K-M (Faint)</option>
+            </select>
+            <div id="color-desc" style="font-size: 0.875rem; color: var(--color-text-light);">Appears colorless face-up. Best value.</div>
+          </div>
+          <!-- Clarity -->
+          <div class="card" style="text-align: left; align-items: flex-start;">
+            <h3>Clarity</h3>
+            <p>Measures inclusions. VS1-VS2 are "eye-clean" meaning flaws aren't visible without a loupe.</p>
+            <select id="guide-clarity" class="filter-select" style="width: 100%; margin-bottom: var(--space-2);" aria-label="Select Clarity Grade">
+              <option value="fl-if">FL / IF</option>
+              <option value="vvs">VVS1 / VVS2</option>
+              <option value="vs" selected>VS1 / VS2</option>
+              <option value="si">SI1 / SI2</option>
+              <option value="i">I1 - I3</option>
+            </select>
+            <div id="clarity-desc" style="font-size: 0.875rem; color: var(--color-text-light);">Eye-clean. Excellent balance of quality and price.</div>
+          </div>
+          <!-- Carat -->
+          <div class="card" style="text-align: left; align-items: flex-start;">
+            <h3>Carat</h3>
+            <p>Refers to weight (1 ct = 0.2g), not physical dimensions, though they correlate. A round brilliant 1ct is roughly 6.5mm.</p>
+            <div style="display:flex; align-items:center; gap:16px; margin-top:8px;">
+              <div style="width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--color-border); display:flex; align-items:center; justify-content:center;">
+                <div style="width: 6.5mm; height: 6.5mm; border-radius: 50%; background: #ccc;" aria-label="Approximate 1 carat diameter"></div>
+              </div>
+              <span style="font-size:0.875rem;">~6.5mm (1ct Round)</span>
+            </div>
+            <p style="font-size:0.75rem; margin-top:8px; font-style:italic;">Visuals are illustrative.</p>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-6);">
+          <div>
+            <h3>Budget Allocation Helper</h3>
+            <p>Enter your budget, and we'll suggest which C to prioritize.</p>
+            <div style="display: flex; gap: 8px; margin-bottom: var(--space-3);">
+              <input type="number" id="budget-input" class="form-control" placeholder="e.g. 5000" aria-label="Enter budget">
+              <button id="calc-budget" class="btn btn-primary">Suggest</button>
+            </div>
+            <p id="budget-result" style="padding: var(--space-3); background: var(--color-bg-light); border-radius: var(--border-radius); border: 1px solid var(--color-border); min-height: 80px; font-size: 0.875rem;">Enter a numeric budget above to see suggestions.</p>
+          </div>
+          <div>
+            <h3>Natural vs. Lab-Grown</h3>
+            <p style="font-size: 0.875rem;">Lab-grown diamonds share the identical chemical and optical properties of natural diamonds. They offer significant cost savings for the same visual impact. Natural diamonds carry traditional heritage and rarity. The choice depends entirely on personal values and budget.</p>
+            <h3 class="mt-4">Certifications</h3>
+            <p style="font-size: 0.875rem;">A certificate (like GIA or IGI) maps the stone's exact attributes. Always verify the physical stone against the certificate plot, especially for inclusions. <br><br><em>Note: All certificate details on Heirloom Review are demo placeholders.</em></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Compare Tray -->
+  <div class="compare-tray" id="compare-tray">
+    <div style="flex-grow: 1;">
+      <h4 style="margin-bottom: 0;">Compare Jewelry (<span id="compare-count">0</span>/4)</h4>
+      <p style="font-size: 0.75rem; margin: 0; color: var(--color-text-light);" id="compare-message"></p>
+    </div>
+    <div class="compare-items" id="compare-items-list"></div>
+    <div style="display:flex; gap:8px;">
+      <button id="clear-compare" class="btn btn-secondary">Clear</button>
+      <a href="compare.html?tab=jewelry" class="btn btn-primary" id="go-compare">Compare</a>
+    </div>
+  </div>
+
+  <!-- Detail Modal -->
+  <div class="modal-overlay" id="detail-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Close modal"><i class="ph ph-x"></i></button>
+      <div id="modal-body">
+        <!-- Rendered via detail.js -->
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html" class="logo" style=" margin-bottom: var(--space-3);">Heirloom Review</a>
+          <p style="font-size: 0.875rem; color: #ccc;">Independent, comprehensive comparisons of fine watches and exquisite jewelry to guide your next heirloom investment.</p>
+          <div class="social-links"><a href="#" aria-label="Instagram"><i class="ph ph-instagram-logo"></i></a><a href="#" aria-label="Pinterest"><i class="ph ph-pinterest-logo"></i></a><a href="#" aria-label="YouTube"><i class="ph ph-youtube-logo"></i></a><a href="#" aria-label="Facebook"><i class="ph ph-facebook-logo"></i></a><a href="#" aria-label="X"><i class="ph ph-x-logo"></i></a></div>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="watches.html">Watches Hub</a></li>
+            <li><a href="jewelry.html">Jewelry Hub</a></li>
+            <li><a href="compare.html">Compare Matrix</a></li>
+            <li><a href="jewelry.html#diamond-guide">Diamond Guide</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="about.html#methodology">How We Rate</a></li>
+            <li><a href="about.html#heritage">Our Heritage</a></li>
+            <li><a href="about.html#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="services.html">Our Services</a></li>
+            <li><a href="services.html#faq">FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-disclosure">Disclaimer: Some links may be affiliate links. We may earn a commission at no cost to you. Reviews are independent. Heirloom Review is a demo brand. Prices, specs, and ratings are placeholder data and are not appraisals, valuations, or investment advice. Resale value is not guaranteed.</p>
+        <p style="font-size: 0.875rem; color: #666;">&copy; 2026 Heirloom Review. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/jewelry.js"></script>
+  <script src="assets/js/detail.js"></script>
+  <script src="assets/js/reviews.js"></script>
+  <script src="assets/js/diamond.js"></script>
+</body>
+</html>

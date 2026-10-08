@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services | Heirloom Review</title>
+  <meta name="description" content="Discover how Heirloom Review helps you find the perfect fine jewelry or watch through side-by-side comparisons, verified reviews, and expert guides.">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">Heirloom Review</a>
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="watches.html">Watches</a></li>
+          <li class="dropdown">
+            <a href="jewelry.html" class="dropdown-toggle btn-secondary" aria-haspopup="true">Jewelry <i class="ph ph-caret-down"></i></a>
+            <ul class="dropdown-menu">
+              <li><a href="jewelry.html?type=rings">Rings</a></li>
+              <li><a href="jewelry.html?type=necklaces">Necklaces</a></li>
+              <li><a href="jewelry.html?type=bracelets">Bracelets</a></li>
+              <li><a href="jewelry.html?type=earrings">Earrings</a></li>
+            </ul>
+          </li>
+          <li><a href="services.html" class="active">Services</a></li>
+          <li class="dropdown">
+            <a href="about.html" class="dropdown-toggle btn-secondary" aria-haspopup="true">About <i class="ph ph-caret-down"></i></a>
+            <ul class="dropdown-menu">
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="about.html#methodology">How We Rate</a></li>
+              <li><a href="about.html#heritage">Heritage</a></li>
+              <li><a href="about.html#contact">Contact</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <a href="compare.html" class="btn btn-primary nav-cta">Compare</a>
+      <button class="hamburger" aria-label="Open Menu" aria-expanded="false" aria-controls="mobile-menu">
+        <i class="ph ph-list"></i>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu-overlay"></div>
+  <div class="mobile-menu-drawer" id="mobile-menu">
+    <button class="close-menu" aria-label="Close Menu"><i class="ph ph-x"></i></button>
+    <nav aria-label="Mobile Navigation">
+      <ul class="mobile-nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="watches.html">Watches</a></li>
+        <li>
+          <button class="mobile-dropdown-toggle" aria-expanded="false" aria-controls="mobile-jewelry-menu">Jewelry <i class="ph ph-caret-down"></i></button>
+          <ul class="mobile-dropdown-menu" id="mobile-jewelry-menu">
+            <li><a href="jewelry.html?type=rings">Rings</a></li>
+            <li><a href="jewelry.html?type=necklaces">Necklaces</a></li>
+            <li><a href="jewelry.html?type=bracelets">Bracelets</a></li>
+            <li><a href="jewelry.html?type=earrings">Earrings</a></li>
+          </ul>
+        </li>
+        <li><a href="services.html">Services</a></li>
+        <li>
+          <button class="mobile-dropdown-toggle" aria-expanded="false" aria-controls="mobile-about-menu">About <i class="ph ph-caret-down"></i></button>
+          <ul class="mobile-dropdown-menu" id="mobile-about-menu">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="about.html#methodology">How We Rate</a></li>
+            <li><a href="about.html#heritage">Heritage</a></li>
+            <li><a href="about.html#contact">Contact</a></li>
+          </ul>
+        </li>
+        <li class="mobile-cta"><a href="compare.html" class="btn btn-primary">Compare</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <main style="padding-top: 80px;">
+    <!-- Intro Section -->
+    <section class="container" style="padding-top: var(--space-6); padding-bottom: var(--space-4);">
+      <div class="section-header">
+        <h1>Our Platform Services</h1>
+        <p>Heirloom Review is designed to empower your purchasing decisions. We aggregate, analyze, and present data so you can invest with confidence.</p>
+      </div>
+
+      <div class="card-grid-3" style="margin-bottom: var(--space-8);">
+        <div class="card" style="text-align: left; align-items: flex-start; padding: var(--space-5);">
+          <i class="ph ph-table" style="font-size: 2.5rem; color: var(--color-accent); margin-bottom: var(--space-3);"></i>
+          <h3>Side-by-Side Comparisons</h3>
+          <p>Evaluate up to 4 items simultaneously. Our matrix aligns specifications row-by-row, from movements and power reserves to metal purity and gemstone clarity.</p>
+          <a href="compare.html" class="btn btn-secondary mt-4">Try Compare</a>
+        </div>
+        <div class="card" style="text-align: left; align-items: flex-start; padding: var(--space-5);">
+          <i class="ph ph-diamond" style="font-size: 2.5rem; color: var(--color-accent); margin-bottom: var(--space-3);"></i>
+          <h3>Diamond & Buying Education</h3>
+          <p>Demystify the 4 C's. Our interactive guide helps you balance Cut, Color, Clarity, and Carat against your budget for maximum visual impact.</p>
+          <a href="jewelry.html#diamond-guide" class="btn btn-secondary mt-4">Read Guide</a>
+        </div>
+        <div class="card" style="text-align: left; align-items: flex-start; padding: var(--space-5);">
+          <i class="ph ph-chat-centered-text" style="font-size: 2.5rem; color: var(--color-accent); margin-bottom: var(--space-3);"></i>
+          <h3>Verified Owner Reviews</h3>
+          <p>Read authentic experiences from real owners. We separate editorial scoring from community feedback so you get the complete picture.</p>
+          <a href="watches.html" class="btn btn-secondary mt-4">Browse Watches</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Buying Checklist -->
+    <section style="background-color: var(--color-bg-offset);">
+      <div class="container">
+        <div class="section-header">
+          <h2>The Heirloom Buying Checklist</h2>
+          <p>Before making any fine jewelry or watch purchase, ensure you've checked these critical boxes.</p>
+        </div>
+        
+        <div style="max-width: 800px; margin: 0 auto; background: var(--color-bg-light); border-radius: var(--border-radius); box-shadow: var(--shadow-main); padding: var(--space-6);">
+          <ul style="list-style: none;">
+            <li style="display: flex; gap: 16px; margin-bottom: var(--space-4); align-items: flex-start;">
+              <i class="ph ph-check-circle" style="font-size: 1.5rem; color: var(--color-success); flex-shrink: 0;"></i>
+              <div>
+                <h4 style="margin-bottom: 4px;">1. Verify Authenticity & Certifications</h4>
+                <p style="font-size: 0.875rem; color: var(--color-text-light);">Always request original papers. For diamonds, insist on reports from reputable labs like GIA or AGS. Match the laser inscription to the report.</p>
+              </div>
+            </li>
+            <li style="display: flex; gap: 16px; margin-bottom: var(--space-4); align-items: flex-start;">
+              <i class="ph ph-check-circle" style="font-size: 1.5rem; color: var(--color-success); flex-shrink: 0;"></i>
+              <div>
+                <h4 style="margin-bottom: 4px;">2. Understand the Warranty</h4>
+                <p style="font-size: 0.875rem; color: var(--color-text-light);">Check what is covered (movement issues, structural integrity) and what isn't (normal wear, water damage). Know the warranty duration.</p>
+              </div>
+            </li>
+            <li style="display: flex; gap: 16px; margin-bottom: var(--space-4); align-items: flex-start;">
+              <i class="ph ph-check-circle" style="font-size: 1.5rem; color: var(--color-success); flex-shrink: 0;"></i>
+              <div>
+                <h4 style="margin-bottom: 4px;">3. Confirm the Return Policy</h4>
+                <p style="font-size: 0.875rem; color: var(--color-text-light);">Is there a restocking fee? Can customized or sized items be returned? Ensure you have at least 14 days to inspect the piece in different lighting.</p>
+              </div>
+            </li>
+            <li style="display: flex; gap: 16px; align-items: flex-start;">
+              <i class="ph ph-check-circle" style="font-size: 1.5rem; color: var(--color-success); flex-shrink: 0;"></i>
+              <div>
+                <h4 style="margin-bottom: 4px;">4. Plan for Insurance</h4>
+                <p style="font-size: 0.875rem; color: var(--color-text-light);">Acquire an appraisal (separate from a grading report) for replacement value and add the item to a dedicated jewelry policy immediately.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="container" id="faq">
+      <div class="section-header">
+        <h2>Frequently Asked Questions</h2>
+      </div>
+      <div style="max-width: 800px; margin: 0 auto;">
+        <div style="margin-bottom: var(--space-4); border-bottom: 1px solid var(--color-border); padding-bottom: var(--space-4);">
+          <h4 style="margin-bottom: var(--space-2);">Are the prices on Heirloom Review exact?</h4>
+          <p style="font-size: 0.875rem; color: var(--color-text-light);">No. All prices shown are placeholder demo data designed to illustrate our comparison tools. Prices for fine goods fluctuate frequently.</p>
+        </div>
+        <div style="margin-bottom: var(--space-4); border-bottom: 1px solid var(--color-border); padding-bottom: var(--space-4);">
+          <h4 style="margin-bottom: var(--space-2);">Do you sell watches or jewelry directly?</h4>
+          <p style="font-size: 0.875rem; color: var(--color-text-light);">We do not. We are an independent review and comparison guide. We provide "Check price" links to external merchants (some of which may be affiliate links).</p>
+        </div>
+        <div style="margin-bottom: var(--space-4); border-bottom: 1px solid var(--color-border); padding-bottom: var(--space-4);">
+          <h4 style="margin-bottom: var(--space-2);">How do you verify user reviews?</h4>
+          <p style="font-size: 0.875rem; color: var(--color-text-light);">We use a combination of purchase receipt verification and manual moderation to ensure "Verified Owner" badges represent authentic experiences. (Note: Current reviews are demo data).</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html" class="logo" style=" margin-bottom: var(--space-3);">Heirloom Review</a>
+          <p style="font-size: 0.875rem; color: #ccc;">Independent, comprehensive comparisons of fine watches and exquisite jewelry to guide your next heirloom investment.</p>
+          <div class="social-links"><a href="#" aria-label="Instagram"><i class="ph ph-instagram-logo"></i></a><a href="#" aria-label="Pinterest"><i class="ph ph-pinterest-logo"></i></a><a href="#" aria-label="YouTube"><i class="ph ph-youtube-logo"></i></a><a href="#" aria-label="Facebook"><i class="ph ph-facebook-logo"></i></a><a href="#" aria-label="X"><i class="ph ph-x-logo"></i></a></div>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="watches.html">Watches Hub</a></li>
+            <li><a href="jewelry.html">Jewelry Hub</a></li>
+            <li><a href="compare.html">Compare Matrix</a></li>
+            <li><a href="jewelry.html#diamond-guide">Diamond Guide</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="about.html#methodology">How We Rate</a></li>
+            <li><a href="about.html#heritage">Our Heritage</a></li>
+            <li><a href="about.html#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="services.html">Our Services</a></li>
+            <li><a href="services.html#faq">FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-disclosure">Disclaimer: Some links may be affiliate links. We may earn a commission at no cost to you. Reviews are independent. Heirloom Review is a demo brand. Prices, specs, and ratings are placeholder data and are not appraisals, valuations, or investment advice. Resale value is not guaranteed.</p>
+        <p style="font-size: 0.875rem; color: #666;">&copy; 2026 Heirloom Review. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
