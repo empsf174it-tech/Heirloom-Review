@@ -108,4 +108,29 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
   });
+
+  // Back to Top Button
+  const backToTopBtn = document.createElement('button');
+  backToTopBtn.id = 'back-to-top';
+  backToTopBtn.setAttribute('aria-label', 'Back to top');
+  backToTopBtn.innerHTML = '<i class="ph ph-caret-up"></i>';
+  document.body.appendChild(backToTopBtn);
+
+  const toggleBackToTop = () => {
+    if (window.scrollY > 300) {
+      backToTopBtn.classList.add('visible');
+    } else {
+      backToTopBtn.classList.remove('visible');
+    }
+  };
+
+  window.addEventListener('scroll', toggleBackToTop, { passive: true });
+  toggleBackToTop();
+
+  backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
 });
