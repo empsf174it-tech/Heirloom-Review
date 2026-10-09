@@ -42,6 +42,15 @@ document.addEventListener('DOMContentLoaded', () => {
       link.classList.add('active');
     }
   });
+  document.querySelectorAll('.mobile-nav-links > li > a:not(.btn)').forEach(link => {
+    if (link.getAttribute('href') === currentPath) link.classList.add('active');
+  });
+  document.querySelectorAll('.mobile-dropdown-toggle').forEach(toggle => {
+    const menu = document.getElementById(toggle.getAttribute('aria-controls'));
+    if (menu && [...menu.querySelectorAll('a')].some(a => a.getAttribute('href').split(/[?#]/)[0] === currentPath)) {
+      toggle.classList.add('active');
+    }
+  });
 
   // Sticky Header on scroll
   const header = document.querySelector('.site-header');

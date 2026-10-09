@@ -1212,3 +1212,42 @@ body.has-hero .site-header:not(.scrolled) .logo {
     height: 45px;
   }
 }
+
+/* Logo: keep brand name on a single line */
+.logo { white-space: nowrap; }
+@media (max-width: 480px) { .site-header .logo { font-size: 1.3rem; } }
+
+/* Mobile menu: current page highlight */
+.mobile-nav-links > li > a.active,
+.mobile-dropdown-toggle.active { color: var(--color-accent); }
+.mobile-nav-links > li > a.active::before,
+.mobile-dropdown-toggle.active::before { content: ''; width: 6px; height: 6px; background: var(--color-accent); transform: rotate(45deg); margin-right: 12px; flex-shrink: 0; }
+.mobile-nav-links > li > a.active { justify-content: flex-start; }
+.mobile-dropdown-toggle.active i { margin-left: auto; }
+
+/* Watches: price range filter */
+.price-range { display: flex; gap: 8px; align-items: center; flex-wrap: nowrap; }
+.price-range .form-control { width: 100px; min-width: 0; padding: var(--space-2); }
+.price-range .btn { padding: var(--space-2) var(--space-3); white-space: nowrap; flex-shrink: 0; min-width: 0; width: auto; line-height: 1.2; }
+@media (max-width: 560px) {
+  .price-range { width: 100%; }
+  .price-range .form-control { flex: 1; width: auto; }
+}
+
+/* Contact: on tablet/mobile, map sits after the form (before footer) */
+@media (max-width: 900px) {
+  .contact-info { display: contents; }
+  .contact-list { order: 1; }
+  .contact-social { order: 2; margin-top: 0; }
+  .contact-note { order: 3; }
+  .contact-form-card { order: 4; }
+  .contact-map { order: 5; }
+}
+
+/* Services: FAQ accordion */
+.faq-item { border-bottom: 1px solid var(--color-border); }
+.faq-item summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: var(--space-3); padding: var(--space-4) 0; font-family: var(--font-heading); font-size: 1.15rem; color: var(--color-primary); }
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary i { flex-shrink: 0; color: var(--color-accent); transition: transform 0.3s var(--ease); }
+.faq-item[open] summary i { transform: rotate(180deg); }
+.faq-item p { font-size: 0.875rem; color: var(--color-text-light); padding-bottom: var(--space-4); }

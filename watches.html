@@ -112,11 +112,11 @@
           <option value="price-desc">Price: High to Low</option>
           <option value="rating">Highest Rating</option>
         </select>
-        <div style="display: flex; gap: 8px; align-items: center;">
-          <input type="number" id="min-price" class="form-control" placeholder="Min $" style="width: 100px; padding: var(--space-2);" aria-label="Minimum Price">
+        <div class="price-range">
+          <input type="number" id="min-price" class="form-control" placeholder="Min $" aria-label="Minimum Price">
           <span>-</span>
-          <input type="number" id="max-price" class="form-control" placeholder="Max $" style="width: 100px; padding: var(--space-2);" aria-label="Maximum Price">
-          <button id="apply-price" class="btn btn-secondary" style="padding: var(--space-2) var(--space-3);">Apply</button>
+          <input type="number" id="max-price" class="form-control" placeholder="Max $" aria-label="Maximum Price">
+          <button id="apply-price" class="btn btn-secondary">Apply</button>
         </div>
         <button id="reset-filters" class="btn btn-secondary" style="border:none; text-decoration:underline;">Reset</button>
       </div>
